@@ -18,7 +18,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Run Pears
+      - name: Run custom action
         uses: araceliponce-es/action-2@main
         with:
           gh_token: ${{ secrets.GH_TOKEN }}
@@ -37,6 +37,9 @@ jobs:
     permissions:
       pages: write
       id-token: write
+
+    environment:
+      name: github-pages
 
     steps:
       - name: Deploy to GitHub Pages
