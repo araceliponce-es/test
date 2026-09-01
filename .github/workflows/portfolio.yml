@@ -1,10 +1,8 @@
-name: Build portfolio
+name: Build and Deploy
 
 on:
   push:
-    branches:
-      - main
-
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -12,15 +10,34 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write
+      contents: read
+      pages: write
+      id-token: write
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Build portfolio
+      - name: Run Pears
         uses: araceliponce-es/action-2@main
         with:
           gh_token: ${{ secrets.GH_TOKEN }}
-          gh_username: araceliponce-es
-          config: bears.yml
+          gh_username: ${{ github.actor }}
+          config: "bears.yml"
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    permissions:
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
