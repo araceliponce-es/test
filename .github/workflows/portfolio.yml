@@ -24,6 +24,7 @@ jobs:
           gh_token: ${{ secrets.GH_TOKEN }}
           gh_username: ${{ github.actor }}
           config: "bears.yml"
+          refresh: true
 
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
