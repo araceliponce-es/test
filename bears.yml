@@ -1,0 +1,14 @@
+github:
+  username: araceliponce-es
+
+repositories:
+  topics:
+    - project
+    - hackathon
+    - automation
+
+recent_commits:
+  enabled: true
+  max: 3
+
+output_html: dist/index.html

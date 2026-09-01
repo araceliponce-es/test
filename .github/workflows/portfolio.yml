@@ -1,0 +1,26 @@
+name: Build portfolio
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build portfolio
+        uses: araceliponce-es/action-2@main
+        with:
+          gh_token: ${{ secrets.GH_TOKEN }}
+          gh_username: araceliponce-es
+          config: bears.yml
