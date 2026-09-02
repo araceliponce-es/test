@@ -33,5 +33,5 @@ tailwind:
   minify: true
 
 stylesheets:
-  - output.css
+#  - output.css
   - extra.css
