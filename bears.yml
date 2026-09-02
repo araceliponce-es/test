@@ -23,11 +23,9 @@ max_commits: 3
 
 
 # one of the templates available on the action's repo
-template: minimalist.html
+template_name: minimalist.html
 
-stylesheets:
-#  - custom.css
-  - extra.css
+
 
 # source file will be compiled (added all tailwind classes) using tailwind cli
 tailwind:
@@ -35,4 +33,6 @@ tailwind:
   output: output.css
   minify: true
 
-
+stylesheets:
+  - output.css
+  - extra.css
