@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run custom action
-        uses: araceliponce-es/action-2@main
+        uses: araceliponce-es/action-3@main
         with:
           gh_token: ${{ secrets.GH_TOKEN }}
           gh_username: ${{ github.actor }}
