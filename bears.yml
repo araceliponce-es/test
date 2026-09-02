@@ -1,22 +1,38 @@
-title: "{{ user.name }} — Portfolio"
+title: "{{ user.name }} — The portfolio"
 
 topics:
   - automation
 
 bio: ""
 
-stylesheets:
-  - custom.css
-  - extra.css
-
-recent_commits: true
-max_commits: 3
 
 cta:
   heading: Hello
   body: Let's build something great together.
-  links:
-    - display: GitHub
-      url: "https://github.com/{{ user.login }}"
-    - display: Contact me
-      url: "mailto:hello@example.com"
+
+links:
+  - display: GitHub
+    url: "https://github.com/{{ user.login }}"
+  - display: Contact me
+    url: "mailto:hello@example.com"
+
+
+
+recent_commits: true
+max_commits: 3
+
+
+# one of the templates available on the action's repo
+template: minimalist.html
+
+stylesheets:
+#  - custom.css
+  - extra.css
+
+# source file will be compiled (added all tailwind classes) using tailwind cli
+tailwind:
+  source: custom.css
+  output: output.css
+  minify: true
+
+
