@@ -26,7 +26,6 @@ max_commits: 3
 template_name: minimalist.html
 
 
-
 # source file will be compiled (added all tailwind classes) using tailwind cli
 tailwind:
   source: custom.css
@@ -34,4 +33,5 @@ tailwind:
   minify: true
 
 stylesheets:
+  - output.css
   - extra.css
